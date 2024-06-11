@@ -1,32 +1,19 @@
 class Pessoa:
-    def __init__(self, nome, peso, idade,comer=False,falar=False,dormir=False):
+    def __init__(self,nome,altura,peso,idade):
         self.nome = nome
+        self.altura = altura
         self.peso = peso
         self.idade = idade
-        self.comer = comer
-        self.falar = falar
-        self.dormir = dormir
 
-    def comendo(self,alimento):
-        if alimento == True:
-            self.comer = True
-            self.falar = False
-            self.dormir = False
-        print(f'{self.nome}, está comendo, por isso não pode falar ou dormir. ')
+    def comer(self,comida):
+        if comida == True:
+            print(self.nome,' está comendo, por isso não pode falar e nem dormir')
 
-    def falando(self,conversar):
-        if conversar == True:
-            self.falar = True
-            self.comer = False
-            self.dormir = False
-            print(f'{self.nome} está falando, por isso não pode dormir ou comer.')
-
-    def dormindo(self,sono):
-         if sono == True:
-             self.falar = False
-             self.comer = False
-             self.dormir = True
-             print(f'{self.nome}, está dormindo, por isso não pode falar ou comer.')
-
-p1 = Pessoa('Yoongi',80,24)
-p1.falando(True)
+    def falar(self,falando):
+        if falando == True:
+            print(self.nome, 'está falando, por isso não pode dormir e nem comer')
+            
+    def dormir(self,dormindo):
+        if dormindo == True:
+            print(self.nome,'está dormindo, por isso não pode falar nem comer')
+        
